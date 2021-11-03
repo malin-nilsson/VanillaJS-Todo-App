@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/3d16140dea.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
@@ -15,22 +18,18 @@
     <main>
         <div class="container">
             <h1>To Do List</h1>
-            <ul>
-                <li>Finish JS assignment<span title="Mark as done" class="btn-container"><button id="check-btn"><i
-                                class="far fa-check-square"></i></button></span></li>
-                <li>Go grocery shopping<span title="Mark as done" class="btn-container"><button id="check-btn"><i
-                                class="far fa-check-square"></i></button></span></li>
-                <li>Meditation<span title="Mark as done" class="btn-container"><button id="check-btn"><i
-                                class="far fa-check-square"></i></button></span></li>
-                <li>Call Mom<span title="Mark as done" class="btn-container"><button id="check-btn"><i
-                                class="far fa-check-square"></i></button></span></li>
+            <ul id="list">
+                <li>Finish JS assignment</li>
+                <li>Go grocery shopping</li>
+                <li>Yoga class</li>
+                <li>Call Mom</li>
             </ul>
-            <div class="add">
-                <input type="text" />
+            <div class="add-container">
+                <input type="text" id="input" placeholder="To do..."/>
                 <button id="add-btn">Add</button>
+             </div>
             </div>
-        </div>
-    </main>
+         </main>
 
 </body>
 

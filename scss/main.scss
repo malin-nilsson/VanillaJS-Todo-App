@@ -20,6 +20,10 @@ main {
     padding-top: 100px;
 }
 
+h1 {
+    font-family: "Permanent Marker", cursive;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -42,28 +46,41 @@ ul {
     list-style: none;
 
     li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        position: relative;
         padding: 7px;
         margin: 5px;
         border: 1px solid rgb(213, 193, 193);
+        transition: 0.2s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 }
 
-.add {
+ul li:hover {
+    background: #e1dcdb;
+}
+
+ul li.checked {
+    background: #8d7a85;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+.add-container {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-
-
-    input {
-        width: 100%;
-        padding: 8px;
-        border-radius: 30px;
-        border: 2px solid #ac749b;
-    }
 }
+
+.add-container input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 30px;
+    border: 2px solid #ac749b;
+}
+
 
 #add-btn {
     border-radius: 30px;
@@ -80,18 +97,22 @@ ul {
 }
 
 #check-btn {
-cursor: pointer;
-background-color: transparent;
-border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
-.far {
-    color:#ac749b;
-    font-size: 1.7rem;
+.remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px 10px;
+    height: 100%;
+}
 
-    &:hover {
-        color: black;
-    }
+.remove:hover {
+    background-color: #e9b7da;
+    color: black;
 }
 
 @media screen and (min-width: 768px) {
@@ -99,4 +120,4 @@ border: none;
         width: 50%;
         margin: 0 auto;
     }
-} 
+}
