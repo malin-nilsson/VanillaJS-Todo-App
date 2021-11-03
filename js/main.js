@@ -7,6 +7,8 @@ window.onload = function() {
 
     let list = document.querySelector("ul");
     list.addEventListener("click", toggleFunction);
+
+    testLocalStorage();
 }
 
 // Funktion som lägger/tar bort nya list-element
@@ -19,13 +21,12 @@ function addListItem() {
         alert("You forgot to write something!")
     } else {
         let span = document.createElement("span");
-        let txt = document.createTextNode("\u00D7");
         span.className = "remove";
-        span.appendChild(txt);
         newToDo.appendChild(span);
         list.appendChild(newToDo);
     }
     deleteListItem();
+    testLocalStorage()
 }
 
 // Funktion som lägger till delete-knapp på varje listelement
@@ -33,9 +34,7 @@ function removeButton() {
     let listItems = document.querySelectorAll("li");
     for (let i = 0; i < listItems.length; i++) {
         let span = document.createElement("span");
-        let txt = document.createTextNode("\u00D7");
         span.className = "remove";
-        span.appendChild(txt);
         listItems[i].appendChild(span);
     }
 }
@@ -58,3 +57,22 @@ function toggleFunction(e) {
         e.target.classList.toggle("checked");
     }
 };
+
+function testLocalStorage() {
+    let todos = document.querySelectorAll("li");
+    let todoArray = [];
+
+    for (let i = 0; i < todos.length; i++) {
+        todoArray.push(todos[i].textContent);
+    }
+    console.log(todoArray)
+
+    let todoArrayAsText = JSON.stringify(todoArray);
+    localStorage.setItem("Todos", todoArrayAsText);
+    console.log(todoArrayAsText)
+
+    let todoArrayFromLocalStorage = localStorage.getItem("Todos");
+
+    let todoArrayAsObject = JSON.parse(todoArrayFromLocalStorage);
+    console.log(todoArrayAsObject)
+} 
