@@ -22,6 +22,8 @@ main {
 
 h1 {
     font-family: "Permanent Marker", cursive;
+    padding-right: 30px;
+    margin: 0px 0px 20px;
 }
 
 .container {
@@ -37,12 +39,85 @@ h1 {
     margin: 10px;
 }
 
+.container .title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pencil {
+    height: 50px;
+    width: 17px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background: linear-gradient(to right, #f26c37 33.33%, #eb852c 33.33%, #eb852c 66.66%, #f19f22 66.66%);
+    animation: draw 5s infinite linear;
+}
+
+@keyframes draw {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(20deg);
+    }
+
+    40% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    70% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.pencil:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 17px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#ed3569 50%, #d2dfe8 50%) no-repeat, linear-gradient(to right, #f26c37 33.33%, #eb852c 33.33%, #eb852c 66.66%, #f19f22 66.66%);
+    background-size: 100% 40%, 100% 60%;
+    background-position: 0 0, 0 100%;
+    border-radius: 2px 2px 0 0;
+}
+
+.pencil:after {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 17px;
+    background: linear-gradient(#f4c09b 70%, #0d2436 70%);
+    right: 0;
+    bottom: -25px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
 ul {
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0;
+    padding: 20px 0px 20px;
+    margin: 0;
     list-style: none;
 
     li {
@@ -59,11 +134,11 @@ ul {
 }
 
 ul li:hover {
-    background: #e1dcdb;
+    background: rgba(252, 211, 202, 0.4);
 }
 
 ul li.checked {
-    background: #8d7a85;
+    background: #b89aac;
     color: #fff;
     text-decoration: line-through;
 }
@@ -77,29 +152,26 @@ ul li.checked {
 .add-container input {
     width: 100%;
     padding: 8px;
-    border-radius: 30px;
     border: 2px solid #ac749b;
+    font-size: 1rem;
+    margin-top: 8px;
 }
 
 
 #add-btn {
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     margin: 0px 0px 0px 10px;
     font-size: 1rem;
     padding: 7px 15px;
     background-color: #e9b7da;
+    box-shadow: -2px 5px 10px 2px #ac749b;
+    transition: transform 0.3s;
 
     &:hover {
-        box-shadow: -2px 5px 10px 2px #ac749b;
+        transform: translate(1px, -2px);
     }
-}
-
-#check-btn {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
 }
 
 .remove {
@@ -108,6 +180,7 @@ ul li.checked {
     top: 0;
     padding: 7px 10px;
     height: 100%;
+    cursor: pointer;
 }
 
 .remove:hover {
