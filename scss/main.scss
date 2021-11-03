@@ -47,8 +47,8 @@ h1 {
 }
 
 .pencil {
-    height: 50px;
-    width: 17px;
+    height: 40px;
+    width: 15px;
     position: relative;
     top: 0;
     left: 0;
@@ -63,19 +63,19 @@ h1 {
     }
 
     10% {
-        transform: rotate(10deg);
-    }
-
-    25% {
-        transform: rotate(20deg);
-    }
-
-    40% {
         transform: rotate(15deg);
     }
 
-    50% {
+    25% {
+        transform: rotate(25deg);
+    }
+
+    40% {
         transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
     }
 
     70% {
@@ -90,8 +90,8 @@ h1 {
 .pencil:before {
     content: "";
     position: absolute;
-    height: 20px;
-    width: 17px;
+    height: 17px;
+    width: 15px;
     top: 0;
     left: 0;
     background: linear-gradient(#ed3569 50%, #d2dfe8 50%) no-repeat, linear-gradient(to right, #f26c37 33.33%, #eb852c 33.33%, #eb852c 66.66%, #f19f22 66.66%);
@@ -103,11 +103,11 @@ h1 {
 .pencil:after {
     content: "";
     position: absolute;
-    height: 25px;
-    width: 17px;
+    height: 21px;
+    width: 15px;
     background: linear-gradient(#f4c09b 70%, #0d2436 70%);
     right: 0;
-    bottom: -25px;
+    bottom: -20px;
     clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
@@ -123,7 +123,7 @@ ul {
     li {
         position: relative;
         padding: 7px;
-        margin: 5px;
+        margin: 5px 0px;
         border: 1px solid rgb(213, 193, 193);
         transition: 0.2s;
         -webkit-user-select: none;
@@ -147,6 +147,7 @@ ul li.checked {
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    margin: 25px 0px 0px;
 }
 
 .add-container input {
@@ -154,12 +155,11 @@ ul li.checked {
     padding: 8px;
     border: 2px solid #ac749b;
     font-size: 1rem;
-    margin-top: 8px;
 }
 
 
 #add-btn {
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     margin: 0px 0px 0px 10px;
