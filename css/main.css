@@ -163,10 +163,14 @@ ul li.checked {
 }
 
 .remove {
+  background-image: url(../assets/x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   position: absolute;
   right: 0;
   top: 0;
-  padding: 7px 10px;
+  padding: 20px 30px;
   height: 100%;
   cursor: pointer;
 }
