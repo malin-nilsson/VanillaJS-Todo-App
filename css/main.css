@@ -10,8 +10,8 @@ body {
 }
 
 main {
-  background-color: #ffeefd;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f4adac'/%3E%3Cstop offset='1' stop-color='%23f4adac' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffdaab'/%3E%3Cstop offset='1' stop-color='%23ffdaab' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ec7172'/%3E%3Cstop offset='1' stop-color='%23ec7172' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF8EE'/%3E%3Cstop offset='1' stop-color='%23FFF8EE' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D77CAE'/%3E%3Cstop offset='1' stop-color='%23D77CAE' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFB968'/%3E%3Cstop offset='1' stop-color='%23FFB968' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-color: #EDBAAE;
+  background-image: url("../assets/stacked-waves-haikei.svg");
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
@@ -33,7 +33,7 @@ h1 {
   margin: 0 auto;
   border-radius: 30px;
   background-color: #fff8f8;
-  box-shadow: -2px 5px 10px 2px #ac749b;
+  box-shadow: -2px 5px 15px 10px #d3beb9;
   margin: 10px;
 }
 
@@ -124,11 +124,11 @@ ul li {
 }
 
 ul li:hover {
-  background: rgba(252, 211, 202, 0.4);
+  background: #eddddb;
 }
 
 ul li.checked {
-  background: #b89aac;
+  background: #bba59e;
   color: #fff;
   text-decoration: line-through;
 }
@@ -143,7 +143,7 @@ ul li.checked {
 .add-container input {
   width: 100%;
   padding: 8px;
-  border: 2px solid #ac749b;
+  border: 2px solid #997e78;
   font-size: 1rem;
 }
 
@@ -154,8 +154,8 @@ ul li.checked {
   margin: 0px 0px 0px 10px;
   font-size: 1rem;
   padding: 7px 15px;
-  background-color: #e9b7da;
-  box-shadow: -2px 5px 10px 2px #ac749b;
+  background-color: #e3cac5;
+  box-shadow: -1px 2px 5px 2px #9c8681;
   transition: transform 0.3s;
 }
 #add-btn:hover {
@@ -176,7 +176,7 @@ ul li.checked {
 }
 
 .remove:hover {
-  background-color: #e9b7da;
+  background-color: #d8c1bc;
   color: black;
 }
 
