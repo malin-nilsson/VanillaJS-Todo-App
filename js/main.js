@@ -54,7 +54,7 @@ window.onload = function () {
 
     function remove(position) {
         myItems.splice(position, 1);
-        console.log(myItems);
+        console.log(position);
         let remove = document.getElementsByClassName("remove");
         for (let i = 0; i < remove.length; i++) {
             remove[i].addEventListener("click", function () {
@@ -64,7 +64,7 @@ window.onload = function () {
         }
     }
 
-    for (let i = 0; i < myItems.length; i++) {
+    for (let i = 0; i < myItems.length - 1; i++) {
         let removebutton = document.getElementsByClassName("remove");
         removebutton[i].addEventListener("click", () => {
             remove(i);
