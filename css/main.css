@@ -108,11 +108,13 @@ h1 {
 
 input[type=checkbox] {
   position: absolute;
-  right: 50px;
+  left: 0;
   top: 5px;
   width: 20px;
   height: 20px;
-  padding: 7px;
+  padding: 10px;
+  margin-left: 7px;
+  cursor: pointer;
 }
 
 ul {
@@ -120,20 +122,16 @@ ul {
   width: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px 0px 20px;
+  padding: 20px 0px 0px;
   margin: 0;
   list-style: none;
 }
 ul li {
   position: relative;
-  padding: 7px;
+  padding: 7px 0px 7px 35px;
   margin: 5px 0px;
   border: 1px solid #d5c1c1;
   transition: 0.2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 ul li:hover {
@@ -176,10 +174,10 @@ ul li.checked {
 }
 
 .remove {
-  background-image: url(../assets/x.svg);
+  background-image: url(../assets/check2-square.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 50%;
   position: absolute;
   right: 0;
   top: 0;
@@ -191,6 +189,37 @@ ul li.checked {
 .remove:hover {
   background-color: #d8c1bc;
   color: black;
+}
+
+.heading {
+  border-top: 1px solid #d8c1bc;
+  padding: 10px 0px;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.finished {
+  position: relative;
+  text-decoration: line-through;
+}
+
+.add-back {
+  background-image: url("../assets/plus-square-fill.svg");
+  background-size: 80%;
+  background-position: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.done-container {
+  background-color: #fff8f8;
+}
+
+.done-container li {
+  list-style: none;
+  text-decoration: line-through;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,10 +1,12 @@
+// Create class for Todo objects
 class Todo {
     constructor(input, status) {
         this.input = input;
-        this.status = status;
+        this.isDone = status;
     }
 }
 
+// Create Todo objects
 let myItem1 = new Todo("Finish JS assignment", false);
 let myItem2 = new Todo("Go grocery shopping", false);
 let myItem3 = new Todo("Meditate", false);
@@ -14,64 +16,100 @@ let myItemsStatus = [myItem1.status, myItem2.status, myItem3.status, myItem4.sta
 let myItemsInput = [myItem1.input, myItem2.input, myItem3.input, myItem4.input]
 
 let doneItems = []
-
-console.log(myItems)
+console.log("my items: " + myItemsInput)
 
 window.onload = function () {
+
+    // Create UL and append it to div container
     let ul = document.createElement("ul");
     ul.setAttribute("id", "list");
-
     let container = document.getElementById("list-container");
     container.appendChild(ul);
 
+    // Create HTML for Todo objects
     for (i = 0; i < myItemsInput.length; i++) {
         let li = document.createElement("li");
         li.textContent = myItemsInput[i]
         ul.appendChild(li);
-        let span = document.createElement("span");
-        span.classList.add("remove");
-        li.appendChild(span);
         let checkbox = document.createElement("input")
         checkbox.type = "checkbox";
-        checkbox.classList.add("check")
+        checkbox.classList.add("check");
         li.appendChild(checkbox);
     }
 
-    let checkboxElems = document.getElementsByClassName("check");
-
-    for (var i = 0; i < checkboxElems.length; i++) {
-        checkboxElems[i].addEventListener("change", toggleFunction);
+    // Add event listeners to checkboxes to hide checkbox when it's clicked
+    let check = document.getElementsByClassName("check");
+    for (let i = 0; i < check.length; i++) {
+        check[i].addEventListener("click", hideTodos)
     }
 
-    function toggleFunction(e) {
+    // Function to hide to-dos
+    function hideTodos(e) {
         let text = e.target.parentElement.textContent;
-        if (e.target.className === "check") {
-            e.target.parentElement.classList.toggle("checked");
-            doneItems.push(text);
-            console.log("Done Items: " + doneItems)
-        }
-    };
+        let parent = this.parentElement;
+        parent.style.display = "none";
+        doneItems.push(text); // push items to doneItems array
+        console.log("Done Items: " + doneItems);
+    }
 
-    function remove(position) {
-        myItems.splice(position, 1);
-        console.log(position);
-        let remove = document.getElementsByClassName("remove");
-        for (let i = 0; i < remove.length; i++) {
-            remove[i].addEventListener("click", function () {
-                let parent = this.parentElement;
-                parent.style.display = "none";
+    // Create heading for finished todos
+    let heading = document.createElement("h3");
+    heading.classList.add("heading");
+    heading.innerHTML = "Finished items:";
+    ul.appendChild(heading);
+
+    // Function to check off todo and add to "Finished todos"
+    function checkOffFromList() {
+        let checkBox = document.getElementsByClassName("check");
+        for (let i = 0; i < checkBox.length; i++) {
+            checkBox[i].addEventListener("click", () => {
+                if (checkBox[i].checked) {
+                    myItems[i].isDone = true; //set status to true if to-do is done
+                    let newtext = myItems[i].input; // grab input from to-do item
+
+                    // Create HTML for finished to-dos
+                    let doneItem = document.createElement("li");
+                    doneItem.textContent = newtext;
+                    doneItem.classList.add("finished")
+                    ul.appendChild(doneItem);
+                    let doneSpan = document.createElement("span");
+                    doneSpan.classList.add("add-back");
+                    doneItem.appendChild(doneSpan);
+                    let checkbox = document.createElement("input")
+                    checkbox.type = "checkbox";
+                    checkbox.classList.add("checkbox", "newcheckbox");
+                    checkbox.setAttribute("checked", "checked");
+                    doneItem.appendChild(checkbox);
+                }
+                console.log(myItems)
+                // remove(i);
             });
         }
     }
+    checkOffFromList()
 
-    for (let i = 0; i < myItems.length - 1; i++) {
-        let removebutton = document.getElementsByClassName("remove");
-        removebutton[i].addEventListener("click", () => {
-            remove(i);
-        });
+
+    function addBackTodo() {
+      
+        }
+
     }
-}
 
+
+
+
+
+
+
+
+
+
+
+// function remove(position) {
+//     myItems.splice(position, 1);
+//     console.log(myItems)
+
+// }
 
 
 
