@@ -26,6 +26,14 @@ h1 {
     margin: 0px 0px 20px;
 }
 
+h3 {
+    font-weight: 300;
+    margin: 30px 0px 5px;
+    padding: 10px 0px 5px;
+    border-top: 1px solid #d8c1bc;
+}
+
+// Wrapping everything in a container
 .container {
     display: flex;
     flex-direction: column;
@@ -37,13 +45,14 @@ h1 {
     background-color: #fff8f8;
     box-shadow: -2px 5px 15px 10px #d3beb9;
     margin: 10px;
-}
 
-.container .title {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    // Container to hold title and pencil animation
+    .title {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+    }
 }
 
 .pencil {
@@ -111,11 +120,8 @@ h1 {
     clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
-#list-container {
-    width: 100%;
-}
-
-input[type="checkbox"] {
+// Styling for checkboxes
+.check {
     position: absolute;
     left: 0;
     top: 5px;
@@ -125,6 +131,8 @@ input[type="checkbox"] {
     margin-left: 7px;
     cursor: pointer;
 }
+
+// Styling for UL and list items
 
 ul {
     display: flex;
@@ -141,7 +149,7 @@ ul {
         margin: 5px 0px;
         border: 1px solid rgb(213, 193, 193);
         transition: 0.2s;
-        
+
     }
 }
 
@@ -155,28 +163,31 @@ ul li.checked {
     text-decoration: line-through;
 }
 
-h3 {
-    font-weight: 300;
-    margin-bottom: 5px;
+// Container for todos
+#list-container {
+    width: 100%;
 }
 
-.finished-ul {
+// Container for finished todos
+.finished-list {
     padding: 0;
 }
-.add-container {
+
+// Styling for input and button
+.input-container {
     display: flex;
     justify-content: flex-start;
     width: 100%;
     margin: 25px 0px 0px;
-}
 
-.add-container input {
-    width: 100%;
-    padding: 8px;
-    border: 2px solid #997e78;;
-    font-size: 1rem;
+    input {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #997e78;
+        ;
+        font-size: 1rem;
+    }
 }
-
 
 #add-btn {
     border-radius: 5px;
@@ -194,59 +205,15 @@ h3 {
     }
 }
 
-.remove {
-    background-image: url(../assets/check2-square.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px 25px;
-    height: 100%;
-    cursor: pointer;
-}
-
-.remove:hover {
-    background-color:#d8c1bc;
-    color: black;
-}
-
-.heading {
-    border-top: 1px solid #d8c1bc;
-    padding: 10px 0px;
-    margin-bottom: 5px;
-    font-weight: 300;
-}
-
+// Styling for finished todos
 .finished {
     position: relative;
     text-decoration: line-through;
 }
 
-.add-back {
-background-image: url("../assets/plus-square-fill.svg");
-background-size: 80%;
-background-position: center;
-height: 100%;
-position: absolute;
-top: 0;
-right: 5px;
-}
-
-.done-container {
-    background-color: #fff8f8;
-}
-
-.done-container li {
-    list-style: none;
-    text-decoration: line-through;
-    
-    ;}
-
 @media screen and (min-width: 768px) {
     .container {
-        width: 50%;
+        width: 30%;
         margin: 0 auto;
     }
 }
