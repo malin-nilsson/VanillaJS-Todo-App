@@ -21,6 +21,7 @@ main {
 }
 
 h1 {
+    font-size: 2.3rem;
     font-family: "Permanent Marker", cursive;
     padding-right: 30px;
     margin: 0px 0px 20px;
@@ -209,6 +210,19 @@ ul li.checked {
 .finished {
     position: relative;
     text-decoration: line-through;
+}
+
+.add-back-icon {
+    background-image: url(../assets/plus-square-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    margin: 7px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

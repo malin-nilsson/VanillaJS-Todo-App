@@ -7,11 +7,11 @@ class Todo {
 }
 
 // Create Todo objects
-let myItem1 = new Todo("Finish JS assignment", false);
-let myItem2 = new Todo("Get groceries", false);
-let myItem3 = new Todo("Meditate", false);
-let myItem4 = new Todo("Call Mom", false);
-let myItems = [myItem1, myItem2, myItem3, myItem4];
+let myTodo1 = new Todo("Finish JS assignment", false);
+let myTodo2 = new Todo("Get groceries", false);
+let myTodo3 = new Todo("Meditate", false);
+let myTodo4 = new Todo("Call Mom", false);
+let myTodos = [myTodo1, myTodo2, myTodo3, myTodo4];
 
 window.onload = function () {
     createHTMLforTodo()
@@ -32,36 +32,43 @@ function createHTMLforTodo() {
     container.appendChild(finishedUL); // Append the UL to the container
 
     let heading = document.createElement("h3"); // Create an H3
-    heading.innerHTML = "Finished todos:" // Add text to H3
+    heading.innerHTML = "Finished to-dos:" // Add text to H3
     ul.after(heading); // Append it after the UL
 
-    // Loop through myItems list and create LI:s for todos
-    for (let i = 0; i < myItems.length; i++) {
+    // Loop through myTodos list and create LI:s for todos
+    for (let i = 0; i < myTodos.length; i++) {
         let li = document.createElement("li");
-        li.textContent = myItems[i].todo;
+        li.textContent = myTodos[i].todo;
 
         let checkbox = document.createElement("input") // Create an input element
         checkbox.type = "checkbox"; // Make it into a checkbox
         checkbox.classList.add("check"); // Add class to the checkbox
+        checkbox.setAttribute("title", "Check off the list"); // Add title attribute to checkboxes that shows a text on hover
         li.appendChild(checkbox); // And append it to the LI
 
-        // Add event listeners checkboxes
+        // Add event listeners to checkboxes
         checkbox.addEventListener("change", () => {
-            markTodoAsDone(myItems[i]) // If checkbox is clicked, run this function
+            markTodoAsDone(myTodos[i]) // If checkbox is clicked, run this function
         });
 
         // If todo is marked as done, append it to UL
-        if (myItems[i].isDone) {
+        if (myTodos[i].isDone) {
             finishedUL.appendChild(li); // Append LI to UL
             li.classList.add("finished"); // Add a class
-            checkbox.setAttribute("checked", "checked"); // Set the checkbox to be checked
+            let span = document.createElement("span"); // Create a span for add back button
+            span.classList.add("add-back-icon"); // Add a class to add back button
+            li.appendChild(span) // Append the button the the LI
+            checkbox.remove(); // Remove the checkbox
+            span.addEventListener("click", () => {  // Add event listeners to  add back button
+                markTodoAsNotDone(myTodos[i]);  // If add back button is clicked, call this function
+            })
         } else {
             ul.appendChild(li);
         }
     }
 }
 
-// Function to check off todos
+// Mark todo as done and then create new HTML
 function markTodoAsDone(objectToMarkAsDone) {
     objectToMarkAsDone.isDone = true; // Mark todo as done
     createHTMLforTodo(); // Create new HTML
@@ -70,9 +77,19 @@ function markTodoAsDone(objectToMarkAsDone) {
 // Function to add new todos
 function addNewTodo() {
     let input = document.getElementById("input").value; // Grab the text from the input element
-    let newTodo = new Todo(input, false);   // Create new Todo object
-    myItems.push(newTodo);  // Push new Todo object into the list
-    createHTMLforTodo();    // Create new HTML for todos
+    if (input === "") { // If the input field is empty....
+        alert("You forgot to write something!") // Create an alert
+    } else { // If not,
+        let newTodo = new Todo(input, false); // Create new Todo object
+        myTodos.push(newTodo); // Push new Todo object into the list
+        createHTMLforTodo(); // Create new HTML for todos
+    }
+}
+
+// Function to add todos back to list
+function markTodoAsNotDone(objectToMarkAsDone) {
+    objectToMarkAsDone.isDone = false; // Mark todo as done
+    createHTMLforTodo(); // Create new HTML
 }
 
 
