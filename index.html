@@ -8,6 +8,9 @@
     <title>To Do List</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d16140dea.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
@@ -17,14 +20,18 @@
 <body>
     <main>
         <div class="container">
-            <div class="title">
+            <div class="title-container">
                 <h1>To Do</h1>
                 <div class="pencil"></div>
             </div>
             <div class="input-container">
-                <input type="text" id="input" placeholder="To do..." />
-                <button id="add-btn">Add</button>
+                <form>
+                    <input type="text" id="input" placeholder="To do..." />
+                    <button id="add-btn">Add</button>
+                </form>
             </div>
+           
+
             <div id="list-container"></div>
     </main>
 

@@ -17,7 +17,8 @@ main {
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -28,10 +29,11 @@ h1 {
 }
 
 h3 {
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin: 30px 0px 5px;
-    padding: 10px 0px 5px;
-    border-top: 1px solid #d8c1bc;
+    padding: 5px 0px 10px;
+    border-bottom: 3px dotted #d8c1bc;
 }
 
 // Wrapping everything in a container
@@ -40,7 +42,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 50px;
+    padding: 30px 30px;
     margin: 0 auto;
     border-radius: 30px;
     background-color: #fff8f8;
@@ -48,7 +50,7 @@ h3 {
     margin: 10px;
 
     // Container to hold title and pencil animation
-    .title {
+    .title-container {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -121,6 +123,17 @@ h3 {
     clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
+// Sub-heading
+
+h2 {
+font-size: 1.2rem;
+font-weight: 600;
+justify-content: space-between;
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
 // Styling for checkboxes
 .check {
     position: absolute;
@@ -133,6 +146,28 @@ h3 {
     cursor: pointer;
 }
 
+.heading-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 20px 0px 10px 0px;
+    border-bottom: 3px dotted #d8c1bc;
+}
+
+.remove-icon {
+    background-image: url(../assets/trash-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+
 // Styling for UL and list items
 
 ul {
@@ -140,15 +175,16 @@ ul {
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 20px 0px 0px;
+    padding: 8px 0px 0px;
     margin: 0;
     list-style: none;
 
     li {
+        font-size: 1.15rem;
         position: relative;
-        padding: 7px 0px 7px 35px;
+        padding: 6px 0px 7px 37px;
         margin: 5px 0px;
-        border: 1px solid rgb(213, 193, 193);
+        border-bottom: 1px solid rgb(213, 193, 193);
         transition: 0.2s;
 
     }
@@ -174,7 +210,18 @@ ul li.checked {
     padding: 0;
 }
 
+.finished {
+    font-weight: 300;
+ 
+}
+
 // Styling for input and button
+
+form {
+    display: flex;
+    width: 100%;
+}
+
 .input-container {
     display: flex;
     justify-content: flex-start;
@@ -202,7 +249,7 @@ ul li.checked {
     transition: transform 0.3s;
 
     &:hover {
-        transform: translate(1px, -2px);
+        background-color: #cfb5b1;
     }
 }
 
@@ -213,7 +260,7 @@ ul li.checked {
 }
 
 .add-back-icon {
-    background-image: url(../assets/plus-square-fill.svg);
+    background-image: url(../assets/plus-square.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -221,7 +268,7 @@ ul li.checked {
     left: 0;
     top: 0;
     padding: 10px;
-    margin: 7px;
+    margin: 8px;
     cursor: pointer;
 }
 
