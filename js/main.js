@@ -7,9 +7,9 @@ class Todo {
 }
 
 // Create Todo objects
-let myTodo1 = new Todo("Finish JS assignment", false);
-let myTodo2 = new Todo("Get groceries", false);
-let myTodo3 = new Todo("Meditate", false);
+let myTodo1 = new Todo("Finish the assignment", false);
+let myTodo2 = new Todo("Meditate", false);
+let myTodo3 = new Todo("Bake cake", false);
 let myTodo4 = new Todo("Call Mom", false);
 let myTodos = [myTodo1, myTodo2, myTodo3, myTodo4];
 
@@ -17,19 +17,43 @@ window.onload = function () {
     createHTMLforTodo()
     let addbutton = document.getElementById("add-btn"); // Grab the button 
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
-
 }
+
 
 // Create HTML for todo
 function createHTMLforTodo() {
+
+    // Container
     let container = document.getElementById("list-container"); // Grab container 
     container.innerHTML = ""; // Set it to empty
+
+    // Container for "Items" and sort button
     let headingContainer = document.createElement("div"); // Create container for subheading
     headingContainer.classList.add("heading-container"); // Add class to subheading
+    
+    
+    // "Items"
     let h2 = document.createElement("h2"); // Create an H2
     h2.innerHTML = "Items"; // Set the HTML
     container.appendChild(headingContainer); // Append the container
     headingContainer.appendChild(h2); // Append the H2
+
+    // Sort button
+    let select = document.createElement("select");  // Create select element
+    select.id = "sort-btn"; // Add an id to select element
+    headingContainer.appendChild(select);   // Append select element to container
+    let sortOption = document.createElement("option");  // Create an opion element
+    sortOption.selected = true; // Set selected to true
+    sortOption.innerHTML = "Sort";  // Add inner HTML
+    let sortAlphabetically = document.createElement("option");  // Create another option element
+    sortAlphabetically.innerHTML = "Alphabetically";    // Add inner HTML
+    select.appendChild(sortOption); // Append option to select element
+    select.appendChild(sortAlphabetically); // Append option to select element
+    select.addEventListener("click", () => {    // Add event listener to select element
+        sortItems() // If select element is clicked, this function is called
+    });
+
+    // UL
     let ul = document.createElement("ul"); // Create a UL to hold the list items
     ul.setAttribute("id", "list"); // Add an ID to the UL
     container.appendChild(ul); // Append the UL to the container
@@ -89,7 +113,7 @@ function markTodoAsDone(objectToMarkAsDone) {
     createHTMLforTodo(); // Create new HTML
 }
 
-// Function to add new todos
+// Add new todos
 function addNewTodo(e) {
     e.preventDefault();
     let input = document.getElementById("input").value.trim(); // Grab the text from the input element
@@ -102,38 +126,33 @@ function addNewTodo(e) {
     }
 }
 
-// Function to add todos back to list
+// Add todos back to list
 function markTodoAsNotDone(objectToMarkAsNotDone) {
     objectToMarkAsNotDone.isDone = false; // Mark todo as done
     createHTMLforTodo(); // Create new HTML
 }
 
-// Function to delete object entirely
+// Delete object entirely using splice
 function deleteTodo(objectToDelete) {
     let objectIndex = myTodos.indexOf(objectToDelete); // Find index on object to remove
     myTodos.splice(objectIndex, 1); // Use splice to remove object
     createHTMLforTodo() // ..and create new HTML
 }
 
+// Sort todo items alphabetically
+function sortItems() {
+    myTodos.sort((a, b) => {
 
+        let todoa = a.todo.toLowerCase(),   // Convert todos to lowercase
+            todob = b.todo.toLowerCase();   // Convert todos to lowercase
 
-
-// funktion för att testa local storage
-// function testLocalStorage() {
-//     let todo = document.querySelectorAll("li");
-//     let todos = [];
-
-//     for (let i = 0; i < todo.length; i++) {
-//         todos.push(todo[i].textContent);
-//     }
-//     console.log("To-dos from testLocalStorage function: " + todos)
-
-//     let todoArrayAsText = JSON.stringify(todos);
-//     localStorage.setItem("Todos", todoArrayAsText);
-//     console.log("To-do array as text" + todoArrayAsText)
-
-//     let todoArrayFromLocalStorage = localStorage.getItem("Todos");
-
-//     let todoArrayAsObject = JSON.parse(todoArrayFromLocalStorage);
-//     console.log("To-do array as object: " + todoArrayAsObject)
-// }
+        if (todoa < todob) {
+            return -1;
+        }
+        if (todoa > todob) {
+            return 1;
+        }
+        return 0;
+    });
+    createHTMLforTodo();
+}

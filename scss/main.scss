@@ -253,6 +253,22 @@ form {
     }
 }
 
+#sort-btn {
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 0px 0px 0px 10px;
+    font-size: 0.8rem;
+    padding: 7px 15px;
+    background-color: #e3cac5;
+    box-shadow: -1px 1px 5px 1px #9c8681;
+    transition: transform 0.3s;
+
+    &:hover {
+        background-color: #cfb5b1;
+    }
+}
+
 // Styling for finished todos
 .finished {
     position: relative;
