@@ -17,7 +17,7 @@ window.onload = function () {
     createHTMLforTodo()
     let addbutton = document.getElementById("add-btn"); // Grab the button 
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
-    
+
 }
 
 // Create HTML for todo
@@ -27,9 +27,9 @@ function createHTMLforTodo() {
     let headingContainer = document.createElement("div"); // Create container for subheading
     headingContainer.classList.add("heading-container"); // Add class to subheading
     let h2 = document.createElement("h2"); // Create an H2
-    h2.innerHTML = "Items";    // Set the HTML
-    container.appendChild(headingContainer);    // Append the container
-    headingContainer.appendChild(h2);  // Append the H2
+    h2.innerHTML = "Items"; // Set the HTML
+    container.appendChild(headingContainer); // Append the container
+    headingContainer.appendChild(h2); // Append the H2
     let ul = document.createElement("ul"); // Create a UL to hold the list items
     ul.setAttribute("id", "list"); // Add an ID to the UL
     container.appendChild(ul); // Append the UL to the container
@@ -66,12 +66,17 @@ function createHTMLforTodo() {
             addBackIcon.setAttribute("title", "Add back"); // Add title attribute to checkboxes that shows a text on hover
             li.appendChild(addBackIcon) // Append the button the the LI
             checkbox.remove(); // Remove the checkbox
-            let removeIcon = document.createElement("span");
-            removeIcon.classList.add("remove-icon")
-            li.appendChild(removeIcon);
-            addBackIcon.addEventListener("click", () => {  // Add event listeners to  add back button
-                markTodoAsNotDone(myTodos[i]);  // If add back button is clicked, call this function
+            let removeIcon = document.createElement("span"); // Create span from remove icon
+            removeIcon.classList.add("remove-icon"); // Add a class to the remove icon
+            removeIcon.setAttribute("title", "Delete"); // Set a title attribute to the remove icon
+            li.appendChild(removeIcon); // Append remove icon to the LI
+            removeIcon.addEventListener("click", () => { // Add event listeners to remove icons
+                deleteTodo(myTodos[i]); // If remove icon is clicked, call this function
             })
+            addBackIcon.addEventListener("click", () => { // Add event listeners to  add back button
+                markTodoAsNotDone(myTodos[i]); // If add back button is clicked, call this function
+            })
+
         } else {
             ul.appendChild(li);
         }
@@ -98,9 +103,16 @@ function addNewTodo(e) {
 }
 
 // Function to add todos back to list
-function markTodoAsNotDone(objectToMarkAsDone) {
-    objectToMarkAsDone.isDone = false; // Mark todo as done
+function markTodoAsNotDone(objectToMarkAsNotDone) {
+    objectToMarkAsNotDone.isDone = false; // Mark todo as done
     createHTMLforTodo(); // Create new HTML
+}
+
+// Function to delete object entirely
+function deleteTodo(objectToDelete) {
+    let objectIndex = myTodos.indexOf(objectToDelete); // Find index on object to remove
+    myTodos.splice(objectIndex, 1); // Use splice to remove object
+    createHTMLforTodo() // ..and create new HTML
 }
 
 
