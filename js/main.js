@@ -19,7 +19,6 @@ window.onload = function () {
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
 }
 
-
 // Create HTML for todo
 function createHTMLforTodo() {
 
@@ -27,30 +26,30 @@ function createHTMLforTodo() {
     let container = document.getElementById("list-container"); // Grab container 
     container.innerHTML = ""; // Set it to empty
 
-    // Container for "Items" and sort button
+    // Container for "Items" title and sort button
     let headingContainer = document.createElement("div"); // Create container for subheading
     headingContainer.classList.add("heading-container"); // Add class to subheading
-    
-    
-    // "Items"
+
+
+    // "Items" title
     let h2 = document.createElement("h2"); // Create an H2
     h2.innerHTML = "Items"; // Set the HTML
     container.appendChild(headingContainer); // Append the container
     headingContainer.appendChild(h2); // Append the H2
 
     // Sort button
-    let select = document.createElement("select");  // Create select element
+    let select = document.createElement("select"); // Create select element
     select.id = "sort-btn"; // Add an id to select element
-    headingContainer.appendChild(select);   // Append select element to container
-    let sortOption = document.createElement("option");  // Create an opion element
+    headingContainer.appendChild(select); // Append select element to container
+    let sortOption = document.createElement("option"); // Create an opion element
     sortOption.selected = true; // Set selected to true
-    sortOption.innerHTML = "Sort";  // Add inner HTML
-    let sortAlphabetically = document.createElement("option");  // Create another option element
-    sortAlphabetically.innerHTML = "Alphabetically";    // Add inner HTML
+    sortOption.innerHTML = "Sort"; // Add inner HTML
+    let sortAlphabetically = document.createElement("option"); // Create another option element
+    sortAlphabetically.innerHTML = "Alphabetically"; // Add inner HTML
     select.appendChild(sortOption); // Append option to select element
     select.appendChild(sortAlphabetically); // Append option to select element
-    select.addEventListener("click", () => {    // Add event listener to select element
-        sortItems() // If select element is clicked, this function is called
+    sortAlphabetically.addEventListener("click", () => { // Add event listener to select element
+        sortTodosAlphabetically() // If select element is clicked, this function is called
     });
 
     // UL
@@ -120,7 +119,7 @@ function addNewTodo(e) {
     if (input === "") { // If the input field is empty....
         alert("You forgot to write something!") // Create an alert
     } else { // If not,
-        let newTodo = new Todo(input, false); // Create new Todo object
+        let newTodo = new Todo(input, false, new Date()); // Create new Todo object
         myTodos.push(newTodo); // Push new Todo object into the list
         createHTMLforTodo(); // Create new HTML for todos
     }
@@ -140,11 +139,10 @@ function deleteTodo(objectToDelete) {
 }
 
 // Sort todo items alphabetically
-function sortItems() {
+function sortTodosAlphabetically() {
     myTodos.sort((a, b) => {
-
-        let todoa = a.todo.toLowerCase(),   // Convert todos to lowercase
-            todob = b.todo.toLowerCase();   // Convert todos to lowercase
+        let todoa = a.todo.toLowerCase(), // Convert todos to lowercase
+            todob = b.todo.toLowerCase(); // Convert todos to lowercase
 
         if (todoa < todob) {
             return -1;

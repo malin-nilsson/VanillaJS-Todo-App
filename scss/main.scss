@@ -2,13 +2,11 @@
     box-sizing: border-box;
 }
 
-
 body {
     padding: 0;
     margin: 0;
     font-size: 12pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 main {
@@ -21,12 +19,22 @@ main {
     font-family: 'Lato', sans-serif;
 }
 
+// Headings
 h1 {
     font-size: 2.3rem;
     font-family: "Permanent Marker", cursive;
     padding-right: 30px;
     margin: 0px 0px 20px;
 }
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    }
 
 h3 {
     font-size: 1.1rem;
@@ -36,7 +44,7 @@ h3 {
     border-bottom: 3px dotted #d8c1bc;
 }
 
-// Wrapping everything in a container
+// Styles for container
 .container {
     display: flex;
     flex-direction: column;
@@ -123,17 +131,6 @@ h3 {
     clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
-// Sub-heading
-
-h2 {
-font-size: 1.2rem;
-font-weight: 600;
-justify-content: space-between;
-width: 100%;
-padding: 0;
-margin: 0;
-}
-
 // Styling for checkboxes
 .check {
     position: absolute;
@@ -146,6 +143,7 @@ margin: 0;
     cursor: pointer;
 }
 
+// Styling for container holding "Items" title and sort button
 .heading-container {
     display: flex;
     align-items: center;
@@ -154,6 +152,7 @@ margin: 0;
     border-bottom: 3px dotted #d8c1bc;
 }
 
+// Styling for trash bin icon
 .remove-icon {
     background-image: url(../assets/trash-fill.svg);
     background-repeat: no-repeat;
@@ -167,9 +166,7 @@ margin: 0;
     cursor: pointer;
 }
 
-
 // Styling for UL and list items
-
 ul {
     display: flex;
     width: 100%;
@@ -186,7 +183,6 @@ ul {
         margin: 5px 0px;
         border-bottom: 1px solid rgb(213, 193, 193);
         transition: 0.2s;
-
     }
 }
 
@@ -232,7 +228,6 @@ form {
         width: 100%;
         padding: 8px;
         border: 2px solid #997e78;
-        ;
         font-size: 1rem;
     }
 }
