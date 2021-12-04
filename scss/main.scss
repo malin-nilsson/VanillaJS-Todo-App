@@ -44,7 +44,17 @@ h3 {
     border-bottom: 3px dotted #d8c1bc;
 }
 
-// Styles for container
+// Date Container
+
+#date-container p {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 5px;
+    color:rgb(114, 108, 108)
+}
+
+// Styles for to-do container
 .container {
     display: flex;
     flex-direction: column;

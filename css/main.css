@@ -43,6 +43,14 @@ h3 {
   border-bottom: 3px dotted #d8c1bc;
 }
 
+#date-container p {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 5px;
+  color: #726c6c;
+}
+
 .container {
   display: flex;
   flex-direction: column;

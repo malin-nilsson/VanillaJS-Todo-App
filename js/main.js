@@ -6,21 +6,25 @@ class Todo {
     }
 }
 
-// Create Todo objects
-let myTodo1 = new Todo("Finish the assignment", false);
-let myTodo2 = new Todo("Meditate", false);
-let myTodo3 = new Todo("Bake cake", false);
-let myTodo4 = new Todo("Call Mom", false);
-let myTodos = [myTodo1, myTodo2, myTodo3, myTodo4];
+
+let myTodos = JSON.parse(localStorage.getItem("todos")) || []; // Grab to-do items from local storage
 
 window.onload = function () {
     createHTMLforTodo()
     let addbutton = document.getElementById("add-btn"); // Grab the button 
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
+
 }
+
+// Show current date and time
+
 
 // Create HTML for todo
 function createHTMLforTodo() {
+    localStorage.setItem("todos", JSON.stringify(myTodos)); // Display to-do items from local storage
+
+    let inputField = document.getElementById("input"); // Grab the input field
+    inputField.value = ""; // Set it to be empty
 
     // Container
     let container = document.getElementById("list-container"); // Grab container 
@@ -113,13 +117,13 @@ function markTodoAsDone(objectToMarkAsDone) {
 }
 
 // Add new todos
-function addNewTodo(e) {
-    e.preventDefault();
-    let input = document.getElementById("input").value.trim(); // Grab the text from the input element
+function addNewTodo() {
+    let inputText = document.getElementById("input");
+    let input = inputText.value.trim(); // Grab the text from the input element
     if (input === "") { // If the input field is empty....
         alert("You forgot to write something!") // Create an alert
     } else { // If not,
-        let newTodo = new Todo(input, false, new Date()); // Create new Todo object
+        let newTodo = new Todo(input, false); // Create new Todo object
         myTodos.push(newTodo); // Push new Todo object into the list
         createHTMLforTodo(); // Create new HTML for todos
     }
