@@ -46,11 +46,12 @@ h3 {
 
 // Date Container
 
-#date-container p {
+.date,
+.time {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0;
-    margin: 5px;
+    margin: 3px;
     color:rgb(114, 108, 108)
 }
 
@@ -232,7 +233,7 @@ form {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin: 25px 0px 0px;
+    margin: 20px 0px 0px;
 
     input {
         width: 100%;

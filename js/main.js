@@ -6,18 +6,41 @@ class Todo {
     }
 }
 
-
 let myTodos = JSON.parse(localStorage.getItem("todos")) || []; // Grab to-do items from local storage
 
 window.onload = function () {
     createHTMLforTodo()
+    startTime();
+    getDate();
     let addbutton = document.getElementById("add-btn"); // Grab the button 
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
-
 }
 
 // Show current date and time
+function startTime() {
+    let timeContainer = document.querySelector(".time");
+    let time = new Date();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+    minutes = checkTime(minutes);
+    seconds = checkTime(seconds);
+    let currentTime = hours + ":" + minutes + ":" + seconds;
+    timeContainer.innerHTML = currentTime;
+    setTimeout(startTime, 1000);
+}
 
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+
+function getDate() {
+    let dateContainer = document.querySelector(".date");
+    let date = new Date();
+    let todaysDate = date.toLocaleDateString();
+    dateContainer.innerHTML = todaysDate;
+}
 
 // Create HTML for todo
 function createHTMLforTodo() {
