@@ -37,16 +37,8 @@ A simple to-do list built with JavaScript where users can add and check off task
 This was my first pure JavaScript project 🙌 I got to explore DOM manipulation and event listening. I also got to try out using local storage for the first time.
 
 ### Continued development
-
-
-### Useful resources
-
+I'd like to add a feature that can sort the to-dos based on due date.
 
 ## Author
 
 - GitHub - [malin-nilsson](https://github.com/malin-nilsson)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
