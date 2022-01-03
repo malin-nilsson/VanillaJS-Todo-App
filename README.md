@@ -1,6 +1,6 @@
 # To-Do App
 
-A simple to-do list built with JavaScript utilizing local storage where users can add and check off tasks.
+A simple to-do list built with JavaScript where users can add and check off tasks.
 
 ## Table of contents
 
@@ -26,7 +26,7 @@ A simple to-do list built with JavaScript utilizing local storage where users ca
 
 ### Built with
 
-- Semantic HTML5 markup
+- HTML
 - CSS 
 - SASS
 - Flexbox
@@ -34,7 +34,7 @@ A simple to-do list built with JavaScript utilizing local storage where users ca
 - Mobile-first workflow
 
 ### What I learned
-
+This was my first pure JavaScript project 🙌 I got to explore DOM manipulation and event listening. I also got to try out using local storage for the first time.
 
 ### Continued development
 
