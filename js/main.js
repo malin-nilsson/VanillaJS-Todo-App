@@ -64,21 +64,6 @@ function createHTMLforTodo() {
     container.appendChild(headingContainer); // Append the container
     headingContainer.appendChild(h2); // Append the H2
 
-    // Sort button
-    let select = document.createElement("select"); // Create select element
-    select.id = "sort-btn"; // Add an id to select element
-    headingContainer.appendChild(select); // Append select element to container
-    let sortOption = document.createElement("option"); // Create an opion element
-    sortOption.selected = true; // Set selected to true
-    sortOption.innerHTML = "Sort"; // Add inner HTML
-    let sortAlphabetically = document.createElement("option"); // Create another option element
-    sortAlphabetically.innerHTML = "Alphabetically"; // Add inner HTML
-    select.appendChild(sortOption); // Append option to select element
-    select.appendChild(sortAlphabetically); // Append option to select element
-    sortAlphabetically.addEventListener("click", () => { // Add event listener to select element
-        sortTodosAlphabetically() // If select element is clicked, this function is called
-    });
-
     // UL
     let ul = document.createElement("ul"); // Create a UL to hold the list items
     ul.setAttribute("id", "list"); // Add an ID to the UL
@@ -165,19 +150,3 @@ function deleteTodo(objectToDelete) {
     createHTMLforTodo() // ..and create new HTML
 }
 
-// Sort todo items alphabetically
-function sortTodosAlphabetically() {
-    myTodos.sort((a, b) => {
-        let todoa = a.todo.toLowerCase(), // Convert todos to lowercase
-            todob = b.todo.toLowerCase(); // Convert todos to lowercase
-
-        if (todoa < todob) {
-            return -1;
-        }
-        if (todoa > todob) {
-            return 1;
-        }
-        return 0;
-    });
-    createHTMLforTodo();
-}
