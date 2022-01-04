@@ -18,7 +18,7 @@ A simple to-do list built with JavaScript where users can add and check off task
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](assets/screenshot.jpg)
 
 ### Links
 
