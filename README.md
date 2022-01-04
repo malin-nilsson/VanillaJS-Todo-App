@@ -34,7 +34,7 @@ A simple to-do list built with JavaScript where users can add and check off task
 - Mobile-first workflow
 
 ### What I learned
-This was my first pure JavaScript project 🙌 I got to explore DOM manipulation and event listening. I also got to try out using local storage for the first time.
+This was my first real JavaScript project. I got to practice DOM manipulation and browser event handling, creating HTML elements, using if/else statements and for loops to update content. I got to work with Classes for the first time and also learned how to store data in local storage.
 
 ### Continued development
 I'd like to add a feature that can sort the to-dos based on due date.
