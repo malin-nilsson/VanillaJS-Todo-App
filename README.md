@@ -8,7 +8,7 @@ A simple to-do list built with JavaScript where users can add and check off task
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://cafeiced.netlify.app/
 
 ### Built with
 
