@@ -12,11 +12,12 @@ body {
 main {
     background-color: #EDBAAE;
     background-image: url("../assets/stacked-waves-haikei.svg");
-    background-attachment: fixed;
     background-size: cover;
+    background-repeat: repeat;
     height: 100vh;
     padding-top: 20px;
     font-family: 'Lato', sans-serif;
+    overflow-y: scroll;
 }
 
 // Headings
@@ -310,6 +311,13 @@ form {
 @media screen and (min-width: 1100px) {
     .container {
         width: 30%;
+<<<<<<< HEAD
         margin: 5% auto;
     }
 }
+=======
+        margin: 2% auto 0;
+   
+    }
+}
+>>>>>>> develop

@@ -12,6 +12,14 @@ window.onload = function () {
     createHTMLforTodo()
     startTime();
     getDate();
+    document.getElementById("input").addEventListener("keyup", (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        
+        if (event.key === "Enter") {
+            addNewTodo();
+        }
+      })
     let addbutton = document.getElementById("add-btn"); // Grab the button 
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
 }
@@ -149,4 +157,5 @@ function deleteTodo(objectToDelete) {
     myTodos.splice(objectIndex, 1); // Use splice to remove object
     createHTMLforTodo() // ..and create new HTML
 }
+
 
