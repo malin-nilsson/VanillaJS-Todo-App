@@ -1,30 +1,17 @@
 # To-Do App
-
-A simple to-do list built with JavaScript where users can add and check off tasks.
-
-### Screenshot
+A simple to-do list built with JavaScript where users can add and check off tasks. This was a school project where I got to practice the basics of DOM manipulation and event handling, using classes, working with arrays and utilizing local storage to store and retrieve data.
 
 ![](assets/screenshot.jpg)
 
 ### Links
-
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://malinstodo.netlify.app/
 
 ### Built with
-
-- HTML
-- CSS 
+- HTML & CSS
 - SASS
 - Flexbox
 - JavaScript
 - Mobile-first workflow
 
-### What I learned
-This was my first real JavaScript project. I got to practice the basics of DOM manipulation and event handling, and I got to use classes and work with arrays. I also learned how to store data in local storage.
-
-### Continued development
-It would be cool to add a feature that can sort the to-dos based on due date.
-
 ## Author
-
 - GitHub - [malin-nilsson](https://github.com/malin-nilsson)
