@@ -7,8 +7,7 @@ A simple to-do list built with JavaScript where users can add and check off task
 - Live Site URL: https://malinstodo.netlify.app/
 
 ### Built with
-- HTML
-- CSS 
+- HTML & CSS
 - SASS
 - Flexbox
 - JavaScript
