@@ -6,21 +6,56 @@ class Todo {
     }
 }
 
-// Create Todo objects
-let myTodo1 = new Todo("Finish the assignment", false);
-let myTodo2 = new Todo("Meditate", false);
-let myTodo3 = new Todo("Bake cake", false);
-let myTodo4 = new Todo("Call Mom", false);
-let myTodos = [myTodo1, myTodo2, myTodo3, myTodo4];
+let myTodos = JSON.parse(localStorage.getItem("todos")) || []; // Grab to-do items from local storage
 
 window.onload = function () {
     createHTMLforTodo()
+    startTime();
+    getDate();
+    document.getElementById("input").addEventListener("keyup", (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        
+        if (event.key === "Enter") {
+            addNewTodo();
+        }
+      })
     let addbutton = document.getElementById("add-btn"); // Grab the button 
     addbutton.addEventListener("click", addNewTodo); // Add an event listener to listen for clicks
 }
 
+// Show current date and time
+function startTime() {
+    let timeContainer = document.querySelector(".time");
+    let time = new Date();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+    minutes = checkTime(minutes);
+    seconds = checkTime(seconds);
+    let currentTime = hours + ":" + minutes + ":" + seconds;
+    timeContainer.innerHTML = currentTime;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+
+function getDate() {
+    let dateContainer = document.querySelector(".date");
+    let date = new Date();
+    let todaysDate = date.toLocaleDateString();
+    dateContainer.innerHTML = todaysDate;
+}
+
 // Create HTML for todo
 function createHTMLforTodo() {
+    localStorage.setItem("todos", JSON.stringify(myTodos)); // Display to-do items from local storage
+
+    let inputField = document.getElementById("input"); // Grab the input field
+    inputField.value = ""; // Set it to be empty
 
     // Container
     let container = document.getElementById("list-container"); // Grab container 
@@ -36,21 +71,6 @@ function createHTMLforTodo() {
     h2.innerHTML = "Items"; // Set the HTML
     container.appendChild(headingContainer); // Append the container
     headingContainer.appendChild(h2); // Append the H2
-
-    // Sort button
-    let select = document.createElement("select"); // Create select element
-    select.id = "sort-btn"; // Add an id to select element
-    headingContainer.appendChild(select); // Append select element to container
-    let sortOption = document.createElement("option"); // Create an opion element
-    sortOption.selected = true; // Set selected to true
-    sortOption.innerHTML = "Sort"; // Add inner HTML
-    let sortAlphabetically = document.createElement("option"); // Create another option element
-    sortAlphabetically.innerHTML = "Alphabetically"; // Add inner HTML
-    select.appendChild(sortOption); // Append option to select element
-    select.appendChild(sortAlphabetically); // Append option to select element
-    sortAlphabetically.addEventListener("click", () => { // Add event listener to select element
-        sortTodosAlphabetically() // If select element is clicked, this function is called
-    });
 
     // UL
     let ul = document.createElement("ul"); // Create a UL to hold the list items
@@ -113,13 +133,13 @@ function markTodoAsDone(objectToMarkAsDone) {
 }
 
 // Add new todos
-function addNewTodo(e) {
-    e.preventDefault();
-    let input = document.getElementById("input").value.trim(); // Grab the text from the input element
+function addNewTodo() {
+    let inputText = document.getElementById("input");
+    let input = inputText.value.trim(); // Grab the text from the input element
     if (input === "") { // If the input field is empty....
         alert("You forgot to write something!") // Create an alert
     } else { // If not,
-        let newTodo = new Todo(input, false, new Date()); // Create new Todo object
+        let newTodo = new Todo(input, false); // Create new Todo object
         myTodos.push(newTodo); // Push new Todo object into the list
         createHTMLforTodo(); // Create new HTML for todos
     }
@@ -138,19 +158,4 @@ function deleteTodo(objectToDelete) {
     createHTMLforTodo() // ..and create new HTML
 }
 
-// Sort todo items alphabetically
-function sortTodosAlphabetically() {
-    myTodos.sort((a, b) => {
-        let todoa = a.todo.toLowerCase(), // Convert todos to lowercase
-            todob = b.todo.toLowerCase(); // Convert todos to lowercase
 
-        if (todoa < todob) {
-            return -1;
-        }
-        if (todoa > todob) {
-            return 1;
-        }
-        return 0;
-    });
-    createHTMLforTodo();
-}

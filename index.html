@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d16140dea.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
+    <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,12 +22,17 @@
         <div class="container">
             <div class="title-container">
                 <h1>To Do</h1>
-                <div class="pencil"></div>
+                
             </div>
+
+            <div class="date"></div>
+
+            <div class="time"></div>
+         
             <div class="input-container">
                 <form>
                     <input type="text" id="input" placeholder="To do..." />
-                    <button id="add-btn">Add</button>
+                    <button type="button" id="add-btn">Add</button>
                 </form>
             </div>
             <div id="list-container"></div>

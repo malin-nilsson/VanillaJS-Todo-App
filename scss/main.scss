@@ -12,19 +12,19 @@ body {
 main {
     background-color: #EDBAAE;
     background-image: url("../assets/stacked-waves-haikei.svg");
-    background-attachment: fixed;
     background-size: cover;
+    background-repeat: repeat;
     height: 100vh;
     padding-top: 20px;
     font-family: 'Lato', sans-serif;
+    overflow-y: scroll;
 }
 
 // Headings
 h1 {
     font-size: 2.3rem;
     font-family: "Permanent Marker", cursive;
-    padding-right: 30px;
-    margin: 0px 0px 20px;
+    margin: 0px 0px 10px;
 }
 
 h2 {
@@ -41,10 +41,21 @@ h3 {
     font-weight: 400;
     margin: 30px 0px 5px;
     padding: 5px 0px 10px;
-    border-bottom: 3px dotted #d8c1bc;
+    border-bottom: 1px solid #d8c1bc;
 }
 
-// Styles for container
+// Date Container
+
+.date,
+.time {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0;
+    margin: 3px;
+    color:rgb(114, 108, 108)
+}
+
+// Styles for to-do container
 .container {
     display: flex;
     flex-direction: column;
@@ -149,7 +160,7 @@ h3 {
     align-items: center;
     margin-top: 15px;
     padding: 20px 0px 10px 0px;
-    border-bottom: 3px dotted #d8c1bc;
+    border-bottom: 1px solid #d8c1bc;
 }
 
 // Styling for trash bin icon
@@ -222,13 +233,20 @@ form {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin: 25px 0px 0px;
+    margin: 20px 0px 0px;
 
     input {
         width: 100%;
         padding: 8px;
         border: 2px solid #997e78;
         font-size: 1rem;
+
+        &:focus {
+            outline: none;
+            border-color :#997e78;
+            box-shadow: 0 0 10px #c2977f;
+           
+        }
     }
 }
 
@@ -285,7 +303,15 @@ form {
 
 @media screen and (min-width: 768px) {
     .container {
-        width: 30%;
+        width: 70%;
         margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .container {
+        width: 30%;
+        margin: 2% auto 0;
+   
     }
 }
