@@ -68,7 +68,7 @@ function createHTMLforTodo() {
 
     // "Items" title
     let h2 = document.createElement("h2"); // Create an H2
-    h2.innerHTML = "Items"; // Set the HTML
+    h2.innerHTML = "All items"; // Set the HTML
     container.appendChild(headingContainer); // Append the container
     headingContainer.appendChild(h2); // Append the H2
 
@@ -80,7 +80,7 @@ function createHTMLforTodo() {
     finishedUL.classList.add("finished-list") // Add a class to the UL
     container.appendChild(finishedUL); // Append the UL to the container
     let subheading = document.createElement("h3"); // Create an H3
-    subheading.innerHTML = "Completed:" // Add text to H3
+    subheading.innerHTML = "Completed items" // Add text to H3
     ul.after(subheading); // Append it after the UL
 
 

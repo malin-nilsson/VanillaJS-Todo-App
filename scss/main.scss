@@ -57,9 +57,10 @@ h3 {
 
 // Styles for to-do container
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 30px 30px;
     margin: 0 auto;
@@ -67,6 +68,7 @@ h3 {
     background-color: #fff8f8;
     box-shadow: -2px 5px 15px 10px #d3beb9;
     margin: 10px;
+    min-height: 550px;
 
     // Container to hold title and pencil animation
     .title-container {
@@ -75,71 +77,6 @@ h3 {
         justify-content: center;
         align-items: flex-start;
     }
-}
-
-.pencil {
-    height: 40px;
-    width: 15px;
-    position: relative;
-    top: 0;
-    left: 0;
-    border-radius: 2px;
-    background: linear-gradient(to right, #f26c37 33.33%, #eb852c 33.33%, #eb852c 66.66%, #f19f22 66.66%);
-    animation: draw 5s infinite linear;
-}
-
-@keyframes draw {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    10% {
-        transform: rotate(15deg);
-    }
-
-    25% {
-        transform: rotate(25deg);
-    }
-
-    40% {
-        transform: rotate(10deg);
-    }
-
-    50% {
-        transform: rotate(0deg);
-    }
-
-    70% {
-        transform: rotate(15deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.pencil:before {
-    content: "";
-    position: absolute;
-    height: 17px;
-    width: 15px;
-    top: 0;
-    left: 0;
-    background: linear-gradient(#ed3569 50%, #d2dfe8 50%) no-repeat, linear-gradient(to right, #f26c37 33.33%, #eb852c 33.33%, #eb852c 66.66%, #f19f22 66.66%);
-    background-size: 100% 40%, 100% 60%;
-    background-position: 0 0, 0 100%;
-    border-radius: 2px 2px 0 0;
-}
-
-.pencil:after {
-    content: "";
-    position: absolute;
-    height: 21px;
-    width: 15px;
-    background: linear-gradient(#f4c09b 70%, #0d2436 70%);
-    right: 0;
-    bottom: -20px;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
 // Styling for checkboxes
@@ -301,23 +238,71 @@ form {
     cursor: pointer;
 }
 
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+
+    p {
+        margin: 0px;
+        padding: 0px;
+        font-size: 0.9rem;
+    }
+
+    a {
+        color: #000;
+    }
+
+    a:hover {
+        color: #000;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .container {
         width: 70%;
         margin: 0 auto;
+        min-height: 500px;
     }
 }
 
 @media screen and (min-width: 1100px) {
     .container {
         width: 30%;
-<<<<<<< HEAD
-        margin: 5% auto;
-    }
-}
-=======
-        margin: 2% auto 0;
+        margin: 0 auto 0;
    
     }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+
+        p {
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #000;
+        }
+
+        a:hover {
+            color: #000;
+        }
+    }
 }
->>>>>>> develop
