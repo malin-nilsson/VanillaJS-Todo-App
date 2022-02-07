@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 12pt;
-  font-family: "Lato", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main {
@@ -22,9 +22,8 @@ main {
 
 h1 {
   font-size: 2.3rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Permanent Marker", cursive;
   margin: 0px 0px 10px;
-  font-weight: 300;
 }
 
 h2 {
@@ -47,11 +46,10 @@ h3 {
 .date,
 .time {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   padding: 0;
   margin: 3px;
   color: #726c6c;
-  font-family: "Lato", sans-serif;
 }
 
 .container {
@@ -66,11 +64,8 @@ h3 {
   background-color: #fff8f8;
   box-shadow: -2px 5px 15px 10px #d3beb9;
   margin: 10px;
-  min-height: 500px;
-  max-height: 600px;
-  overflow-y: scroll;
+  min-height: 550px;
 }
-
 .container .title-container {
   display: flex;
   width: 100%;
@@ -84,8 +79,8 @@ h3 {
   top: 5px;
   width: 20px;
   height: 20px;
-  padding: 0px;
-  margin: 0;
+  padding: 10px;
+  margin-left: 7px;
   cursor: pointer;
 }
 
@@ -115,11 +110,10 @@ ul {
   width: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 15px 0px 0px;
+  padding: 8px 0px 0px;
   margin: 0;
   list-style: none;
 }
-
 ul li {
   font-size: 1.15rem;
   position: relative;
@@ -127,6 +121,10 @@ ul li {
   margin: 5px 0px;
   border-bottom: 1px solid #d5c1c1;
   transition: 0.2s;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 ul li:hover {
@@ -151,21 +149,23 @@ ul li.checked {
   font-weight: 300;
 }
 
+form {
+  display: flex;
+  width: 100%;
+}
+
 .input-container {
   display: flex;
   justify-content: flex-start;
   width: 100%;
   margin: 20px 0px 0px;
 }
-
 .input-container input {
   width: 100%;
   padding: 8px;
   border: 2px solid #997e78;
-  border-radius: 5px;
   font-size: 1rem;
 }
-
 .input-container input:focus {
   outline: none;
   border-color: #997e78;
@@ -183,7 +183,6 @@ ul li.checked {
   box-shadow: -1px 2px 5px 2px #9c8681;
   transition: transform 0.3s;
 }
-
 #add-btn:hover {
   background-color: #cfb5b1;
 }
@@ -199,7 +198,6 @@ ul li.checked {
   box-shadow: -1px 1px 5px 1px #9c8681;
   transition: transform 0.3s;
 }
-
 #sort-btn:hover {
   background-color: #cfb5b1;
 }
@@ -218,7 +216,7 @@ ul li.checked {
   left: 0;
   top: 0;
   padding: 10px;
-  margin: 8px 0px;
+  margin: 8px;
   cursor: pointer;
 }
 
@@ -233,17 +231,14 @@ footer {
   align-items: center;
   padding-bottom: 30px;
 }
-
 footer p {
   margin: 0px;
   padding: 0px;
   font-size: 0.9rem;
 }
-
 footer a {
   color: #000;
 }
-
 footer a:hover {
   color: #000;
 }
@@ -253,17 +248,12 @@ footer a:hover {
     width: 70%;
     margin: 0 auto;
     min-height: 500px;
-    max-height: 600px;
-    overflow-y: scroll;
   }
 }
-
 @media screen and (min-width: 1100px) {
   .container {
     width: 30%;
     margin: 0 auto 0;
-    max-height: 500px;
-    overflow-y: scroll;
   }
 
   footer {
@@ -277,17 +267,14 @@ footer a:hover {
     align-items: center;
     padding-bottom: 20px;
   }
-
   footer p {
     margin: 0px;
     padding: 0px;
     font-size: 0.9rem;
   }
-
   footer a {
     color: #000;
   }
-
   footer a:hover {
     color: #000;
   }
