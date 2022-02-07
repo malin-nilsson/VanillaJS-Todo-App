@@ -12,12 +12,10 @@ window.onload = function () {
     createHTMLforTodo()
     startTime();
     getDate();
-    document.getElementById("input").addEventListener("keyup", (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        
+    document.getElementById("input").addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-            addNewTodo();
+            e.preventDefault();
+            return false;
         }
       })
     let addbutton = document.getElementById("add-btn"); // Grab the button 
@@ -26,11 +24,11 @@ window.onload = function () {
 
 // Show current date and time
 function startTime() {
-    let timeContainer = document.querySelector(".time");
-    let time = new Date();
-    let hours = time.getHours();
-    let minutes = time.getMinutes();
-    let seconds = time.getSeconds();
+    let timeContainer = document.querySelector(".time"); // Grab the div container
+    let time = new Date(); // Create a new date object
+    let hours = time.getHours(); // Get hours
+    let minutes = time.getMinutes(); // Get minutes
+    let seconds = time.getSeconds(); // Get seconds
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
     let currentTime = hours + ":" + minutes + ":" + seconds;
@@ -64,13 +62,6 @@ function createHTMLforTodo() {
     // Container for "Items" title and sort button
     let headingContainer = document.createElement("div"); // Create container for subheading
     headingContainer.classList.add("heading-container"); // Add class to subheading
-
-
-    // "Items" title
-    let h2 = document.createElement("h2"); // Create an H2
-    h2.innerHTML = "All items"; // Set the HTML
-    container.appendChild(headingContainer); // Append the container
-    headingContainer.appendChild(h2); // Append the H2
 
     // UL
     let ul = document.createElement("ul"); // Create a UL to hold the list items
