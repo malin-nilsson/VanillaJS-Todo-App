@@ -22,9 +22,8 @@ main {
 
 h1 {
   font-size: 2.3rem;
-  font-family: "Lato", sans-serif;
-  margin: 0px 0px 10px;
   font-weight: 300;
+  margin: 0px 0px 10px;
 }
 
 h2 {
@@ -51,7 +50,6 @@ h3 {
   padding: 0;
   margin: 3px;
   color: #726c6c;
-  font-family: "Lato", sans-serif;
 }
 
 .container {
@@ -70,7 +68,6 @@ h3 {
   max-height: 600px;
   overflow-y: scroll;
 }
-
 .container .title-container {
   display: flex;
   width: 100%;
@@ -84,9 +81,9 @@ h3 {
   top: 5px;
   width: 20px;
   height: 20px;
+  cursor: pointer;
   padding: 0px;
   margin: 0;
-  cursor: pointer;
 }
 
 .heading-container {
@@ -119,7 +116,6 @@ ul {
   margin: 0;
   list-style: none;
 }
-
 ul li {
   font-size: 1.15rem;
   position: relative;
@@ -157,15 +153,13 @@ ul li.checked {
   width: 100%;
   margin: 20px 0px 0px;
 }
-
 .input-container input {
   width: 100%;
   padding: 8px;
   border: 2px solid #997e78;
-  border-radius: 5px;
   font-size: 1rem;
+  border-radius: 5px;
 }
-
 .input-container input:focus {
   outline: none;
   border-color: #997e78;
@@ -183,7 +177,6 @@ ul li.checked {
   box-shadow: -1px 2px 5px 2px #9c8681;
   transition: transform 0.3s;
 }
-
 #add-btn:hover {
   background-color: #cfb5b1;
 }
@@ -199,7 +192,6 @@ ul li.checked {
   box-shadow: -1px 1px 5px 1px #9c8681;
   transition: transform 0.3s;
 }
-
 #sort-btn:hover {
   background-color: #cfb5b1;
 }
@@ -218,8 +210,8 @@ ul li.checked {
   left: 0;
   top: 0;
   padding: 10px;
-  margin: 8px 0px;
   cursor: pointer;
+  margin: 8px 0px;
 }
 
 footer {
@@ -233,17 +225,14 @@ footer {
   align-items: center;
   padding-bottom: 30px;
 }
-
 footer p {
   margin: 0px;
   padding: 0px;
   font-size: 0.9rem;
 }
-
 footer a {
   color: #000;
 }
-
 footer a:hover {
   color: #000;
 }
@@ -257,7 +246,6 @@ footer a:hover {
     overflow-y: scroll;
   }
 }
-
 @media screen and (min-width: 1100px) {
   .container {
     width: 30%;
@@ -277,17 +265,14 @@ footer a:hover {
     align-items: center;
     padding-bottom: 20px;
   }
-
   footer p {
     margin: 0px;
     padding: 0px;
     font-size: 0.9rem;
   }
-
   footer a {
     color: #000;
   }
-
   footer a:hover {
     color: #000;
   }
