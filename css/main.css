@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 12pt;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 main {
@@ -22,7 +22,7 @@ main {
 
 h1 {
   font-size: 2.3rem;
-  font-family: "Permanent Marker", cursive;
+  font-weight: 300;
   margin: 0px 0px 10px;
 }
 
@@ -46,7 +46,7 @@ h3 {
 .date,
 .time {
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0;
   margin: 3px;
   color: #726c6c;
@@ -64,7 +64,9 @@ h3 {
   background-color: #fff8f8;
   box-shadow: -2px 5px 15px 10px #d3beb9;
   margin: 10px;
-  min-height: 550px;
+  min-height: 500px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 .container .title-container {
   display: flex;
@@ -79,9 +81,9 @@ h3 {
   top: 5px;
   width: 20px;
   height: 20px;
-  padding: 10px;
-  margin-left: 7px;
   cursor: pointer;
+  padding: 0px;
+  margin: 0;
 }
 
 .heading-container {
@@ -110,7 +112,7 @@ ul {
   width: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 8px 0px 0px;
+  padding: 15px 0px 0px;
   margin: 0;
   list-style: none;
 }
@@ -149,11 +151,6 @@ ul li.checked {
   font-weight: 300;
 }
 
-form {
-  display: flex;
-  width: 100%;
-}
-
 .input-container {
   display: flex;
   justify-content: flex-start;
@@ -165,6 +162,7 @@ form {
   padding: 8px;
   border: 2px solid #997e78;
   font-size: 1rem;
+  border-radius: 5px;
 }
 .input-container input:focus {
   outline: none;
@@ -216,8 +214,8 @@ form {
   left: 0;
   top: 0;
   padding: 10px;
-  margin: 8px;
   cursor: pointer;
+  margin: 8px 0px;
 }
 
 footer {
@@ -248,12 +246,16 @@ footer a:hover {
     width: 70%;
     margin: 0 auto;
     min-height: 500px;
+    max-height: 600px;
+    overflow-y: scroll;
   }
 }
 @media screen and (min-width: 1100px) {
   .container {
     width: 30%;
     margin: 0 auto 0;
+    max-height: 500px;
+    overflow-y: scroll;
   }
 
   footer {
