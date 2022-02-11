@@ -3,7 +3,7 @@ A simple to-do list built with JavaScript where users can add and check off task
 
 This was a school project where I got to practice the basics of DOM manipulation and event handling, using classes, working with arrays and utilizing local storage to store and retrieve data.
 
-![](assets/screenshot.jpg)
+![](assets/screenshot-todo-app.jpg)
 
 ### Links
 - Live Site URL: https://malinstodo.netlify.app/
