@@ -12,5 +12,8 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "sass": "^1.43.4"
+  },
+  "devDependencies": {
+    "cypress": "^9.4.1"
   }
 }
