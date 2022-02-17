@@ -8,7 +8,7 @@ This was a school project where I got to practice the basics of DOM manipulation
 ### Links
 - Live Site URL: https://malinstodo.netlify.app/
 
-### Built with
+### Tools
 - HTML & SASS
 - Mobile-first workflow
 - JavaScript
